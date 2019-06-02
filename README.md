@@ -20,7 +20,12 @@ In the code above, const will not change and cannot be reassigned. If you try to
 let can be reassigned and take new value. It creates a mutable variable.
 
 let is the same as const in that both are blocked-scope. It means that the variable is only available within its scope.
-
+```
+let name = 'Said';
+    name = 'Lucy';
+ console.log(name);
+ //Lucy
+```
 Arrow functions
 The arrow function is really awesome, and makes your code more readable, more structured, and look like modern code. Instead of using this:
 
@@ -61,10 +66,23 @@ Template Literals
 Template literals or template strings are pretty cool. We don’t have to use the plus (+) operator to concatenate strings, or when we want to use a variable inside a string.
 
 The old syntax:
-
+```
+//ES5
+function myFunc(name,age){
+  return 'Hi '+ 'name' + ' Your age is ' + 'age' +' year old.';
+}
+console.log(myFunc('Said',22));
+'Hi name Your age is age year old.'
+```
 
 With new ES6 syntax:
-
+```
+const myFunc = (name,age) =>{
+  return `Hi ${name} , Your age is ${age} year old.`;
+}
+console.log(myFunc('Said', 22));
+//'Hi Said , Your age is 22 year old.'
+```
 
 So simple! It’s a really huge difference between the old syntax and ES6. When playing with strings, the literal string in ES6 looks more organized and well structured than ES5.
 
@@ -158,59 +176,3 @@ console.log(Home.name)//  said
 To inherit from another class, use the extends keyword followed by the name of the class you want to inherit from.
 
 
-You can learn more about Classes here.
-
-ES6 has other amazing features — you can explore them here.
-
-Conclusion
-I hope you guys found this article useful, and I hope I was able to introduce you some of the ES6 features. If so, subscribe to this mail-list to learn more about Front-end topics. Thanks for your time.
-
-freeCodeCamp.org
-freeCodeCamp.org
-Read more posts by this author.
-
-Read More
-How to use React and React-Sentinel to make responsive, dumb components
-How to use React and React-Sentinel to make responsive, dumb components
-freeCodeCamp.org
-freeCodeCamp.org
-FREECODECAMP.ORG
-A YEAR AGO
-React.js: implement the drag and drop feature without using external libraries
-React.js: implement the drag and drop feature without using external libraries
-freeCodeCamp.org
-freeCodeCamp.org
-FREECODECAMP.ORG
-A YEAR AGO
-freeCodeCamp is a donor-supported tax-exempt 501(c)(3) nonprofit organization (United States Federal Tax Identification Number: 82-0779546)
-
-Our mission: to help people learn to code for free. We accomplish this by creating thousands of videos, articles, and interactive coding lessons - all freely available to the public. We also have thousands of freeCodeCamp study groups around the world.
-
-Donations to freeCodeCamp go toward our education initiatives, and help pay for servers, services, and staff. You can make a tax-deductible donation here.
-
-Our Nonprofit
-About
-Donate
-Shop
-Sponsors
-Email Us
-Our Community
-News
-Alumni Network
-Study Groups
-Forum
-Gitter
-GitHub
-Support
-Academic Honesty
-Code of Conduct
-Privacy Policy
-Terms of Service
-Our Learning Resources
-Learn
-Guide
-Youtube
-Podcast
-Twitter
-Medium
-Instagram
