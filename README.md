@@ -83,7 +83,6 @@ const myFunc = (name,age) =>{
 console.log(myFunc('Said', 22));
 //'Hi Said , Your age is 22 year old.'
 ```
-
 So simple! It’s a really huge difference between the old syntax and ES6. When playing with strings, the literal string in ES6 looks more organized and well structured than ES5.
 
 Default parameters
@@ -92,11 +91,24 @@ When I work in PHP, I usually use default parameters. These allow you to define 
 So, when you forget to write the parameter, it won’t return an undefined error because the parameter is already defined in the default. So when you run your function with a missed parameter, it will take the value of the default parameter t, and it will not return an error!
 
 Look at this example:
-
+```
+const myFunc = (name,age) =>{
+  return `Hi ${name}, your age is ${age} year old?`
+}
+console.log(myFunc('Said'));
+//'Hi Said, your age is undefined year old?'
+```
 
 The function above returns undefined, because we forgot to give it the second parameter age.
 
 But if we used the default parameter, it won’t return undefined, and it will use its value when we forget to assign a parameter!
+```
+const myFunc = (name,age=22) =>{
+  return `Hi ${name}, your age is ${age} year old?`
+}
+console.log(myFunc('Said'));
+//'Hi Said, your age is 22 year old?'
+```
 
 
 As you see, the function returns a value even though we missed the second parameter. Now with the default parameter we can handle the error in advance.
@@ -105,10 +117,36 @@ Array and object destructing
 Destruction makes the assignment of the values of an array or object to the new variable easier.
 
 The old syntax:
+```
+const contacts={
+  name: 'Said',
+  familyName:'Li',
+  age: 22
+}
+let name = contacts.name;
+let familyName = contacts.familyName;
+let age = contacts.age;
+console.log(name);
+console.log(familyName);
+console.log(age);
+// 'Said'
+'Li'
+22
 
+```
 
 With ES6 syntax:
-
+```
+const contacts={
+   name: 'Said',
+   familyName:'Li',
+   age: 22
+}
+let {name, familyName, age}=contacts;
+console.log(name);
+console.log(familyName);
+console.log(age);
+```
 
 With ES5, we have to assign each value to each variable. With ES6, we just put our values within curly brackets to get any property of the object.
 
@@ -119,8 +157,15 @@ We always have to name the variable the same as the name of the property. But in
 
 For the array, we use the same syntax as the object. We have just to replace the curly brackets with square brackets.
 
-
+```
+const Arr =['tony','gavin','gloria',20];
+let [value1, value2,vaule3]=Arr;
+console.log(value1);
+console.log(value2);
+console.log(value3);
 Import and export
+```
+
 Using import and export in your JavaScript application makes it more powerful. They allow you to create separate and reusable components.
 
 If you are familiar with any JavaScript MVC framework, you will see that they use import and export to handle the components most of the time. So how do they really work?
@@ -130,15 +175,26 @@ It is simple! export allows you to export a module to be used in another JavaScr
 For example, we have two files. The first is named detailComponent.js and the second is named homeComponent.js.
 
 In detailComponent.js we are going to export the detail function.
-
+```
+//ES6
+export default function detail(name,age){
+  return `Hi ${name}, your age is ${age} year old.`;
+}
+import detail from './detailCompenent';
+console.log(detail('Said',20));
+```
 
 And if we want to use this function in homeComponent.js, we will just use import.
 
 
 If we want to import more than one module, we just put them within curly brackets.
 
-
-So cool, isn’t it?!
+```
+import {detail,userProfile,getPosts} from './detailComponent';
+console.log(detail('Said',20));
+console.log(userProfile);
+console.log(getPosts);
+```
 
 Promises
 Promises are a new feature of ES6. It’s a method to write asynchronous code. It can be used when, for example, we want to fetch data from an API, or when we have a function that takes time to be executed. Promises make it easier to solve the problem, so let’s create our first Promise!
