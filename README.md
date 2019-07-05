@@ -203,21 +203,32 @@ Promises are a new feature of ES6. It’s a method to write asynchronous code. I
 If you log your console, it will return a Promise. So, if we want to execute a function after data is fetched, we will use a Promise. The Promise takes two parameters: resolve and reject to handle an expected error.
 
 Note: the fetch function returns a Promise itself!
-
+```
 const url='https://jsonplaceholder.typicode.com/posts';
 const getData=(url)=&gt;{return fetch(url);}
 getData(url).then(data=&gt; data.json()).then(result=> console.log(result));
+```
 Now if you log your console it will return an array of data.
 
 Rest parameter and Spread operator
 The rest parameters are used to get the argument of an array, and return a new array.
-
+```
+const arr = ['said',20,'JavaScript','Hi','said','How are you?'];
+const [val1,val2,val3,...rest] = arr;
+const Func=(restOfArr)=>{
+  return restOfArr.filter(item=>{return item}).join(" ");
+}
+console.log(Func(rest));
+// 'Hi said How are you?'
+```
 
 
 The spread operator has the same syntax as the rest parameter, but the spread operator takes the Array itself and not just the arguments. We can use the Spread parameter to get the values of an Array, instead of using a for loop or any other method.
-
+```
 const arr=['said',20,'JavaScript enthusiast','Hi','Said','How are you?'];
 const Func=(...anArray)=&gt;{return anArray;}console.log(Func(arr));//output  ["said", 20, "JavaScript enthusiast", "Hi", "Said", "How are you?"
+```
+
 Classes
 Classes are the core of object oriented programming (OOP). They make your code more secure and encapsulated. Using classes gives your code a nice structure and keeps it oriented.
 
