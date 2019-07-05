@@ -235,11 +235,43 @@ Classes are the core of object oriented programming (OOP). They make your code m
 
 To create a class, use the class keyword followed by the name of the class with two curly brackets.
 
-
+```
+class myClass{
+  constructor(name,age){
+    this.name = name;
+    this.age = age;
+  }
+}
+const user = new myClass('Said', 22);
+console.log(user.name)
+console.log(user.age)
+```
 Now we can access the class methods and properties using the new keyword.
-
+```
 class myClass{    constructor(name,age){    this.name=name;    this.age=age;}}const Home= new myClass("said",20);
 console.log(Home.name)//  said
+```
+
 To inherit from another class, use the extends keyword followed by the name of the class you want to inherit from.
 
+```
+class myClass {
+  constructor(name,age){
+    this.name = name;
+    this.age = age;
+  }
+}
+sayHello(){
+  console.log(`Hi ${this.name} your age is ${this.age}.`);
+  
+}
 
+class UserProfile extends myClass{
+  username(){
+    console.log(this.name)
+  }
+}
+const profile = new UserProfile('Said',22);
+profile.sayHello()
+profile.username()
+```
