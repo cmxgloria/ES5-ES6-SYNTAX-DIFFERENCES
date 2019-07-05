@@ -275,3 +275,6 @@ const profile = new UserProfile('Said',22);
 profile.sayHello()
 profile.username()
 ```
+You can learn more about Classes here.
+
+ES6 has other amazing features — you can explore them here.
